@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<title>PEE POO PA PEE</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script src="angular.js"></script>
+<script src="angular-route.min.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/factories/poemFactory.js"></script>
+<script src="assets/controllers/poemController.js"></script>
+<script src="assets/controllers/showController.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/static/styles.css">
+<link rel="stylesheet" type="text/css" href="assets/static/sharebutton.css">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+
+<script>
+
+function Typewriter (sSelector, nRate) {
+
+function clean () {
+  clearInterval(nIntervId);
+  bTyping = false;
+  bStart = true;
+  oCurrent = null;
+  aSheets.length = nIdx = 0;
+}
+
+function scroll (oSheet, nPos, bEraseAndStop) {
+  if (!oSheet.hasOwnProperty("parts") || aMap.length < nPos) { return true; }
+
+  var oRel, bExit = false;
+
+  if (aMap.length === nPos) { aMap.push(0); }
+
+  while (aMap[nPos] < oSheet.parts.length) {
+    oRel = oSheet.parts[aMap[nPos]];
+
+    scroll(oRel, nPos + 1, bEraseAndStop) ? aMap[nPos]++ : bExit = true;
+
+    if (bEraseAndStop && (oRel.ref.nodeType - 1 | 1) === 3 && oRel.ref.nodeValue) {
+      bExit = true;
+      oCurrent = oRel.ref;
+      sPart = oCurrent.nodeValue;
+      oCurrent.nodeValue = "";
+    }
+
+    oSheet.ref.appendChild(oRel.ref);
+    if (bExit) { return false; }
+  }
+
+  aMap.length--;
+  return true;
+}
+
+function typewrite () {
+  if (sPart.length === 0 && scroll(aSheets[nIdx], 0, true) && nIdx++ === aSheets.length - 1) { clean(); return; }
+
+  oCurrent.nodeValue += sPart.charAt(0);
+  sPart = sPart.slice(1);
+}
+
+function Sheet (oNode) {
+  this.ref = oNode;
+  if (!oNode.hasChildNodes()) { return; }
+  this.parts = Array.prototype.slice.call(oNode.childNodes);
+
+  for (var nChild = 0; nChild < this.parts.length; nChild++) {
+    oNode.removeChild(this.parts[nChild]);
+    this.parts[nChild] = new Sheet(this.parts[nChild]);
+  }
+}
+
+var
+  nIntervId, oCurrent = null, bTyping = false, bStart = true,
+  nIdx = 0, sPart = "", aSheets = [], aMap = [];
+
+this.rate = nRate || 100;
+
+this.play = function () {
+  if (bTyping) { return; }
+  if (bStart) {
+    var aItems = document.querySelectorAll(sSelector);
+
+    if (aItems.length === 0) { return; }
+    for (var nItem = 0; nItem < aItems.length; nItem++) {
+      aSheets.push(new Sheet(aItems[nItem]));
+      /* Uncomment the following line if you have previously hidden your elements via CSS: */
+      // aItems[nItem].style.visibility = "visible";
+    }
+
+    bStart = false;
+  }
+
+  nIntervId = setInterval(typewrite, this.rate);
+  bTyping = true;
+};
+
+this.pause = function () {
+  clearInterval(nIntervId);
+  bTyping = false;
+};
+
+this.terminate = function () {
+  oCurrent.nodeValue += sPart;
+  sPart = "";
+  for (nIdx; nIdx < aSheets.length; scroll(aSheets[nIdx++], 0, false));
+  clean();
+};
+}
+
+/* usage: */
+var oTWExample1 = new Typewriter(/* elements: */ "#homecopy, #second, #third, #fourth, #fifth, #sixth, #sharebutton",  /* frame rate (optional): */ 50);
+/* default frame rate is 100: */
+// var oTWExample2 = new Typewriter("#controls");
+// var oTWExample3 = new Typewriter(/* elements: */ "#second", /* frame rate (optional): */ 100);
+
+onload = function () {
+oTWExample1.play();
+// oTWExample2.play();
+};
+
+// function enter1(){
+//      document.getElementById("first").style.display= 'block';
+// };
+
+function enter2(ele) {
+  if(event.keyCode == 13) {
+     document.getElementById("second").style.display= 'block';
+  }
+};
+
+function enter3(ele) {
+  if(event.keyCode == 13) {
+     document.getElementById("third").style.display= 'block';
+  }
+};
+
+function enter4(ele) {
+  if(event.keyCode == 13) {
+     document.getElementById("fourth").style.display= 'block';
+  }
+};
+function enter5(ele) {
+  if(event.keyCode == 13) {
+     document.getElementById("fifth").style.display= 'block';
+  }
+};
+function enter6(ele) {
+  if(event.keyCode == 13) {
+     document.getElementById("sixth").style.display= 'block';
+  }
+};
+function enterS(ele) {
+  if(event.keyCode == 13) {
+     document.getElementById("sharebutton").style.display= 'block';
+  }
+};
+</script>
+
+
+</head>
+<body>
+
+  <!-- <script>
+  onload = function () {
+  oTWExample1.play();
+  // oTWExample2.play();
+  };
+  </script> -->
+<div ng-view="" ></div>
+</body>
+</html>

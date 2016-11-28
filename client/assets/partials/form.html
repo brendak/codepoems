@@ -1,0 +1,22 @@
+<div ng-controller="poemController as meep">
+
+
+<p ng-repeat='error in meep.poemErrors'>{{error.message}}</p>
+<form id="poemform">
+<p>
+<input type='text' ng-model='meep.poem.title' placeholder="Title"> <br>
+<input type='text' ng-model='meep.poem.name' placeholder="Name"><br></p>
+1: <input type='text' ng-model='meep.poem.first' > <br>
+2: <input type='text' ng-model='meep.poem.second' > <br>
+3: <input type='text' ng-model='meep.poem.third' > <br>
+4: <input type='text' ng-model='meep.poem.fourth' > <br>
+5: <input type='text' ng-model='meep.poem.fifth' > <br>
+<p></p>
+<p>All lines end with "__"</p>
+<input type="submit" id="poemformsubmit" value="GO" ng-click='meep.addpoem()'><br>
+<p></p>
+</form>
+
+</div>
+
+<input action="action" type="button" id="back" value="Back" onclick="history.go(-1);" />

@@ -1,0 +1,47 @@
+<div id="rightside">
+  <div id="bluebox">
+    <p> When you're ready:</p>
+     1. press <span id="controls" style="text-align: center;" class="intLink" onclick="oTWExample1.play();">ME</span> <br>
+     2. Fill in the blank <br>
+  </div>
+    <input action="action" type="button" id="back" value="Back" onclick="history.go(-1);" />
+</div>
+
+  <div id="poeminput" >
+    <div id="first">
+    <form>mornings = ["fresh eggs", "warm toast", <input type="text" onkeydown="enter2(this)"/>"]</form>
+    </div>
+
+    <div id="second" style="display: none">
+    <form>  def You(sunshine, <input type="text" onkeydown="enter3(this)"/>):</form>
+    </div>
+
+    <div id="third" style="display: none">
+     <form>need_coffee = random.choice(["No", "<input type="text" onkeydown="enter4(this)"/>"])</form>
+    </div>
+
+    <div id="fourth" style="display: none">
+      <form>and_more = mornings[0] + "<input type="text" onkeydown="enter5(this)"/>"</form>
+    </div>
+
+    <div id="fifth" style="display: none">
+      <form>print need_coffee + and_more + "<input type="text" onkeydown="enterS(this)"/>"</form>
+    </div>
+
+    <!-- <div id="sixth" style="display: none">
+      <form><input type="text" onkeydown="enterS(this)"/></form>
+    </div> -->
+
+    <div id="sharebutton" style="display: none">
+      <input type="checkbox" class="checkbox" id="share" onclick=checked>
+      <label for="share" class="label">Share</label>
+        <div class="social">
+          <ul>
+              <li class="entypo-twitter" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"></li>
+             <li class="entypo-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"></li>
+            <li class="entypo-mail" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"></li>
+          </ul>
+        </div>
+    </div>
+
+  </div>

@@ -1,0 +1,140 @@
+span.intLink, a {
+  cursor: pointer;
+  color: #000000;
+  text-decoration: underline;
+}
+a:visited {
+  cursor: pointer;
+  color: #000000;
+  background-color: #000000;
+  text-decoration: underline;
+}
+#rightside {
+  width: 185px;
+  height: 345px;
+  float: right;
+  padding: 4px;
+  overflow: auto;
+  margin: 4px;
+}
+#bluebox {
+  width: 185px;
+  height: 145px;
+  float: right;
+  background-color: #eeeeff;
+  padding: 0px;
+  overflow: auto;
+  font-size: 20px;
+  margin: 4px;
+  font-family: lato, helvetica, monospace;
+  /* visibility: hidden; */
+}
+#back {
+  width: 185px;
+  float: right;
+  padding: 4px;
+  overflow: auto;
+  margin: 4px;
+  background-color:white;
+  font-family: lato, helvetica, monospace;
+  color:black;
+  font-size:45px;
+  text-align: center;
+  margin-top:3%;
+}
+#triangle {
+  width: 0;
+	height: 0;
+	border-left: 200px solid transparent;
+	border-right: 200px solid transparent;
+	border-bottom: 300px solid #eeeeff;
+  display: inline-block;
+  /*padding: 4px;*/
+  float: left;
+  position: relative;
+  left: 45%;
+  overflow: auto;
+  font-size: 12px;
+  /*margin: 4px;*/
+  /*border-radius: 5px;*/
+  font-family: lato, helvetica, monospace;
+  /* visibility: hidden; */
+}
+#homecopy{
+ font-family: lato, helvetica, monospace;
+ color:black;
+ font-size:45px;
+ position: relative;
+ text-align: center;
+}
+#first, #menu, #poemform {
+ background-color:white;
+ font-family: lato, helvetica, monospace;
+ color:black;
+ font-size:45px;
+ text-align: center;
+ margin-top:3%;
+}
+#second, #third, #fourth, #fifth, #sixth, #sharebutton {
+ background-color:white;
+ font-family: lato, helvetica, monospace;
+ color:black;
+ font-size:45px;
+ text-align: center;
+ margin-top:3%;
+}
+#formlink {
+ background-color:white;
+ font-family: lato, helvetica, monospace;
+ color:black;
+ font-size:20px;
+ position: relative;
+}
+input[type="text"] {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid black;
+  width: 400px;
+  font-family: lato, helvetica, monospace;
+  color: #70DB93;
+  font-size:45px;
+}
+input[type="submit"] {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border: 2px solid black;
+  width: 400px;
+  font-family: lato, helvetica, monospace;
+  color:black;
+  font-size:45px;
+}
+input[type="button"] {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border: 2px solid black;
+  width: 200px;
+  font-family: lato, helvetica, monospace;
+  color:black;
+  font-size:45px;
+}
+#list:hover {
+    background-color: #ffff7f;
+}
+#menulink:hover {
+  background-color: #eeeeff;
+}
+#back:hover {
+  background-color: #70DB93;
+}
+#formlink2:hover, #poemformsubmit:hover {
+    background-color: #d300a9;
+}
+#moon {
+  width: 300px;
+  height: 300px;
+  border-radius: 45%;
+  box-shadow: 55px 55px 0 0 #ffff7f;
+}

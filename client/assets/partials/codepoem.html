@@ -1,0 +1,58 @@
+
+{{Poem.title}}
+{{title}}
+{{first}}
+{{data.title}}
+{{poem.title}}
+
+<div ng-controller='showController as meep'>
+
+
+<div id="poeminput">
+
+  <div id="first">
+  {{meep.Poem.first}} <form><input type="text" onkeydown="enter2(this)"/></form>
+  </div>
+
+  <div id="second" style="display: none">
+  {{meep.Poem.second}} <form><input type="text" onkeydown="enter3(this)"/></form>
+  </div>
+
+  <div id="third" style="display: none">
+   {{meep.Poem.third}} <form><input type="text" onkeydown="enter4(this)"/></form>
+  </div>
+
+  <div id="fourth" style="display: none">
+   {{meep.Poem.fourth}} <form><input type="text" onkeydown="enter5(this)"/></form>
+  </div>
+
+  <div id="fifth" style="display: none">
+   {{meep.Poem.fifth}} <form><input type="text" onkeydown="enterS(this)"/></form>
+  </div>
+
+  <div id="sharebutton" style="display: none">
+    <input type="checkbox" class="checkbox" id="share" onclick=checked>
+    <label for="share" class="label">Share</label>
+      <div class="social">
+        <ul>
+            <li class="entypo-twitter" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"></li>
+           <li class="entypo-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"></li>
+          <li class="entypo-mail" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"></li>
+        </ul>
+      </div>
+  </div>
+</div>
+</div>
+
+<div ng-controller='poemController as meep'>
+
+  <form ng-repeat="x in Poem">
+    {{x.name}} {{x.title}}
+  </form>
+
+  {{meep.Poem.title}}
+  {{meep.title}}
+  {{meep.first}}
+  {{meep.data.title}}
+  {{meep.poem.title}}
+</div>
