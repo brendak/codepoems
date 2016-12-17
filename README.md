@@ -1,2 +1,4 @@
 # codepoems
-JS "Game" - In works
+JS "Game" 
+
+Angular.js/MongoDB
