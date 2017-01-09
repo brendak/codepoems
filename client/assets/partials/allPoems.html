@@ -1,0 +1,15 @@
+<div ng-controller="showController" id='alldapoems'>
+  <h3> All Poems </h3>
+  <table>
+    <thead>
+      <th>Name:</th>
+      <th>Title</th>
+      <th>Poem</th>
+      <th>Shared</th>
+    </thead>
+    <tr ng-repeat= 'poems in Poem'>
+      <td>{{poems.name}}</td>
+      <td>{{poems.title}}</td>
+      <td>{{poems.poem}}</td>
+      <td>{{poems.shared}}</td>
+</div>

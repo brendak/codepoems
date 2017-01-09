@@ -34,8 +34,18 @@ $httpProvider.interceptors.push(
       controller: 'poemController',
       controllerAs: "meep"
   })
+  .when('/poemthree',{
+      templateUrl: 'assets/partials/poemthree.html',
+      controller: 'poemController',
+      controllerAs: "meep"
+  })
   .when('/form',{
       templateUrl: 'assets/partials/form.html',
+      controller: 'poemController',
+      controllerAs: "meep"
+  })
+  .when('/top',{
+      templateUrl: 'assets/partials/top.html',
       controller: 'poemController',
       controllerAs: "meep"
   })

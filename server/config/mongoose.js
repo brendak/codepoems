@@ -19,7 +19,7 @@ var mongoose= require('mongoose'),
 /*
 *  database information
 */
-    dbURI = 'mongodb://localhost/meanproject3';
+    dbURI = 'mongodb://localhost/poemsforcodes';
 /*
 * Connect to the database
 */

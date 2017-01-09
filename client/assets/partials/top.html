@@ -1,0 +1,17 @@
+<div id="topcopy">
+    <p>Most popular poems</p>
+    <div id="topranking">
+<table >
+    <thead>
+      <th>Title </th>
+      <th> Shared</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="top in meep.newpoem | orderBy:top.shared ">
+        <td><a href="#/codepoem/:id">{{top.title}}</a></td>
+        <td>{{top.shared}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <input action="action" type="button" id="back" value="Back" onclick="history.go(-1);" />
+</div>  </div>

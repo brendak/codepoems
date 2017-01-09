@@ -1,6 +1,4 @@
 <div ng-controller="poemController as meep">
-
-
 <p ng-repeat='error in meep.poemErrors'>{{error.message}}</p>
 <form id="poemform">
 <p>
@@ -12,7 +10,7 @@
 4: <input type='text' ng-model='meep.poem.fourth' > <br>
 5: <input type='text' ng-model='meep.poem.fifth' > <br>
 <p></p>
-<p>All lines end with "__"</p>
+<p>All lines end with "__" <br>for the user to fill in</p>
 <input type="submit" id="poemformsubmit" value="GO" ng-click='meep.addpoem()'><br>
 <p></p>
 </form>

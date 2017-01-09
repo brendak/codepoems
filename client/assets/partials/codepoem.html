@@ -1,37 +1,35 @@
 
-{{Poem.title}}
-{{title}}
-{{first}}
-{{data.title}}
-{{poem.title}}
-
 <div ng-controller='showController as meep'>
-
-
 <div id="poeminput">
+<form id="ownpoem">
+
+  <center><div id="title">
+  <p>
+    <input id="poemtitle" type='text' ng-model='meep.newpoem.title' placeholder="{{meep.Poem.title}}" value="{{meep.Poem.title}}" ></p>
+</div></center>
 
   <div id="first">
-  {{meep.Poem.first}} <form><input type="text" onkeydown="enter2(this)"/></form>
+  {{meep.Poem.first}} <p><input type="text" ng-model="meep.newpoem.inputone" onkeydown="enter2(this)"/></p>
   </div>
 
   <div id="second" style="display: none">
-  {{meep.Poem.second}} <form><input type="text" onkeydown="enter3(this)"/></form>
+  {{meep.Poem.second}} <p><input type="text" ng-model="meep.newpoem.inputtwo" onkeydown="enter3(this)"/></p>
   </div>
 
   <div id="third" style="display: none">
-   {{meep.Poem.third}} <form><input type="text" onkeydown="enter4(this)"/></form>
+   {{meep.Poem.third}} <p><input type="text" ng-model="meep.newpoem.inputthree" onkeydown="enter4(this)"/></p>
   </div>
 
   <div id="fourth" style="display: none">
-   {{meep.Poem.fourth}} <form><input type="text" onkeydown="enter5(this)"/></form>
+   {{meep.Poem.fourth}} <p><input type="text" ng-model="meep.newpoem.inputfour" onkeydown="enter5(this)"/></p>
   </div>
 
   <div id="fifth" style="display: none">
-   {{meep.Poem.fifth}} <form><input type="text" onkeydown="enterS(this)"/></form>
+   {{meep.Poem.fifth}} <p><input type="text" ng-model="meep.newpoem.inputfive" onkeydown="enterS(this)"/></p>
   </div>
 
-  <div id="sharebutton" style="display: none">
-    <input type="checkbox" class="checkbox" id="share" onclick=checked>
+  <div id="sharebutton" >
+    <input type="checkbox" class="checkbox" id="share" onClick="onClick()" ng-click="meep.newSavedPoem(this)" ng-model="meep.newpoem.shared" >
     <label for="share" class="label">Share</label>
       <div class="social">
         <ul>
@@ -41,18 +39,18 @@
         </ul>
       </div>
   </div>
-</div>
+</form>
+<input action="action" type="button" id="back" value="Back" onclick="history.go(-1);" />
+
 </div>
 
-<div ng-controller='poemController as meep'>
 
-  <form ng-repeat="x in Poem">
-    {{x.name}} {{x.title}}
-  </form>
-
-  {{meep.Poem.title}}
-  {{meep.title}}
-  {{meep.first}}
-  {{meep.data.title}}
-  {{meep.poem.title}}
 </div>
+<script>
+var count = 0;
+function onClick() {
+  count += 1;
+  document.getElementById("dacount").innerHTML = count;
+  console.log(count)
+};
+</script>

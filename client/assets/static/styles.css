@@ -27,7 +27,6 @@ a:visited {
   font-size: 20px;
   margin: 4px;
   font-family: lato, helvetica, monospace;
-  /* visibility: hidden; */
 }
 #back {
   width: 185px;
@@ -49,26 +48,22 @@ a:visited {
 	border-right: 200px solid transparent;
 	border-bottom: 300px solid #eeeeff;
   display: inline-block;
-  /*padding: 4px;*/
   float: left;
   position: relative;
   left: 45%;
   overflow: auto;
   font-size: 12px;
-  /*margin: 4px;*/
-  /*border-radius: 5px;*/
   font-family: lato, helvetica, monospace;
-  /* visibility: hidden; */
 }
-#homecopy{
+#homecopy, #topcopy, #topranking{
  font-family: lato, helvetica, monospace;
  color:black;
  font-size:45px;
  position: relative;
  text-align: center;
 }
-#first, #menu, #poemform {
- background-color:white;
+#first, #menu, #poemform, #topranking{
+ background-color: white;
  font-family: lato, helvetica, monospace;
  color:black;
  font-size:45px;
@@ -89,6 +84,13 @@ a:visited {
  color:black;
  font-size:20px;
  position: relative;
+}
+#poemtitle {
+  border-bottom: 0px solid black;
+  color: black;
+}
+#poemtitle::-webkit-input-placeholder  {
+  color: black;
 }
 input[type="text"] {
   border: 0;
@@ -137,4 +139,8 @@ input[type="button"] {
   height: 300px;
   border-radius: 45%;
   box-shadow: 55px 55px 0 0 #ffff7f;
+}
+table {
+  text-align: center;
+  vertical-align: middle;
 }

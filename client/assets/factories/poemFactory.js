@@ -8,8 +8,26 @@ factory.getpoems = function(callback){
 }
 
 factory.addpoem = function(poem, callback){
+  console.log('adding poem in facotry rerout to server')
   $http.post('/create', poem).then(function(returned_data){
     callback(returned_data.data);
+  })
+}
+
+factory.addnewpoem = function(poem, callback){
+  console.log('adding poem in facotry rerout to server')
+  $http.post('/createnew', poem).then(function(returned_data){
+    console.log(returned_data.data);
+    if (typeof(callback) == 'function'){
+      callback(returned_data.data);
+    }
+  })
+}
+
+factory.newSavedPoem = function(poem, callback){
+  console.log("adding new poem in factory rerout to server")
+  $http.post('/createnew', poem).then(function(returned_data){
+    callback(returned_data.data)
   })
 }
 
@@ -25,5 +43,13 @@ factory.show = function(id, callback){
   })
 }
 
+//newly added to show poems from database to list.html
+factory.shownew = function(callback){
+  $http.get('/shownewpoem').then(function(returned_data){
+    console.log(returned_data.data);
+    console.log('in the shownew factory')
+    callback(returned_data.data);
+  })
+}
 return factory;
 }]);
