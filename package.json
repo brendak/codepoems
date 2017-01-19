@@ -9,7 +9,8 @@
     "express-session": "^1.14.2",
     "mongoose": "^4.6.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+  },
    "engines": {
     "node": "5.1.0",
     "npm": "3.4.1"
@@ -22,9 +23,5 @@
   "author": "",
   "license": "ISC"
 }
-  "dependencies": {
-    "bower": "1.7.1",
-    "express": "4.13.3"
-  },
   "cacheDirectories": ["node_modules"]
 }
