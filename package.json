@@ -1,6 +1,6 @@
 {
-  "name": "express_login",
-  "version": "1.0.0",
+  "name": "poemcode",
+  "version": "0.0.0",
   "description": "",
   "main": "server.js",
   "dependencies": {
@@ -10,11 +10,21 @@
     "mongoose": "^4.6.7"
   },
   "devDependencies": {},
+   "engines": {
+    "node": "5.1.0",
+    "npm": "3.4.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+     "test": "grunt test",
+    "postinstall": "bower install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC"
+}
+  "dependencies": {
+    "bower": "1.7.1",
+    "express": "4.13.3"
+  },
+  "cacheDirectories": ["node_modules"]
 }
